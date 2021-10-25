@@ -7,15 +7,15 @@ import java.util.Map;
 import java.util.Optional;
 
 public class MemoryMemberRepository implements MemberRepository {
-    private final Map<Long, Member> members = new HashMap<>();
+    private static final Map<Long, Member> members = new HashMap<>();
 
     @Override
     public void save(Member member) {
-        this.members.put(member.getId(), member);
+        members.put(member.getId(), member);
     }
 
     @Override
     public Optional<Member> findById(final Long memberId) {
-        return Optional.ofNullable(this.members.get(memberId));
+        return Optional.ofNullable(members.get(memberId));
     }
 }
