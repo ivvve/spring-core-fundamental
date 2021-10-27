@@ -1,9 +1,9 @@
 package com.example.order.service;
 
+import com.example.AppConfig;
 import com.example.member.domain.Grade;
 import com.example.member.domain.Member;
 import com.example.member.service.MemberService;
-import com.example.member.service.MemberServiceImpl;
 import com.example.order.domain.Order;
 import org.junit.jupiter.api.Test;
 
@@ -12,13 +12,12 @@ import java.math.BigInteger;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class OrderServiceImplTest {
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     void createOrder() {
-        // given
-        final MemberService memberService = new MemberServiceImpl();
-        final OrderService orderService = new OrderServiceImpl();
-
         final Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 

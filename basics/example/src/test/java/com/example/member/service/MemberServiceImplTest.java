@@ -1,15 +1,15 @@
 package com.example.member.service;
 
+import com.example.AppConfig;
 import com.example.member.domain.Grade;
 import com.example.member.domain.Member;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class MemberServiceImplTest {
-    private MemberService memberService = new MemberServiceImpl();
+    final AppConfig appConfig = new AppConfig();
+    private MemberService memberService = appConfig.memberService();
 
     @Test
     void join() {
