@@ -12,7 +12,7 @@ import static java.util.Objects.nonNull;
 
 @Slf4j
 @Component
-public class HelloTraceV1 {
+public class HelloTraceV2 {
     private static final String START_PREFIX = "-->";
     private static final String COMPLETE_PREFIX = "<--";
     private static final String EX_PREFIX = "<X-";
@@ -23,6 +23,13 @@ public class HelloTraceV1 {
 
         log.info("[{}] {}{}", traceId.getId(), addSpace(START_PREFIX, traceId.getDepth()), message);
         return traceStatus;
+    }
+
+    // V2에서 추가
+    public TraceStatus beginSync(final TraceId priorTraceId, final String message) {
+        final TraceId nextTraceId = priorTraceId.next();
+        log.info("[{}] {}{}", nextTraceId.getId(), addSpace(START_PREFIX, nextTraceId.getDepth()), message);
+        return new TraceStatus(nextTraceId, Instant.now(), message);
     }
 
     public void end(TraceStatus status) {
