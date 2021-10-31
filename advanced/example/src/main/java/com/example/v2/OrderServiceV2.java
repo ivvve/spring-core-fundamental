@@ -1,4 +1,4 @@
-package com.example.v2.v1;
+package com.example.v2;
 
 import com.example.trace.TraceId;
 import com.example.trace.TraceStatus;

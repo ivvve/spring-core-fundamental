@@ -1,4 +1,4 @@
-package com.example.v2.v1;
+package com.example.v2;
 
 import com.example.trace.TraceStatus;
 import com.example.trace.hello.HelloTraceV2;
