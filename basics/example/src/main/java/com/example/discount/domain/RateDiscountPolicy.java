@@ -1,11 +1,13 @@
 package com.example.discount.domain;
 
 import com.example.member.domain.Member;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy {
     private static final int DISCOUNT_PERCENT = 10;
 

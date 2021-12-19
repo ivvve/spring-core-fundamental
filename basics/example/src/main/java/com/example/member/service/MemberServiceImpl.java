@@ -2,10 +2,14 @@ package com.example.member.service;
 
 import com.example.member.domain.Member;
 import com.example.member.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MemberServiceImpl implements MemberService {
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberServiceImpl(final MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
