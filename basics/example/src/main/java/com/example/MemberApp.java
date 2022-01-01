@@ -10,7 +10,8 @@ public class MemberApp {
     public static void main(String[] args) {
 //        final AppConfig appConfig = new AppConfig();
 //        final MemberService memberService = appConfig.memberService();
-        final ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+//        final ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        final ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
         final MemberService memberService = ac.getBean(MemberService.class);
 
         final Member newMember = new Member(1L, "memberA", Grade.VIP);

@@ -1,7 +1,10 @@
 package com.example.order.domain;
 
+import lombok.Getter;
+
 import java.math.BigInteger;
 
+@Getter
 public class Order {
     private Long id;
     private String itemName;
@@ -13,26 +16,6 @@ public class Order {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.discountAmount = discountAmount;
-    }
-
-    public BigInteger calculatePrice() {
-        return this.itemPrice.subtract(this.discountAmount);
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getItemName() {
-        return itemName;
-    }
-
-    public BigInteger getItemPrice() {
-        return itemPrice;
-    }
-
-    public BigInteger getDiscountAmount() {
-        return discountAmount;
     }
 
     @Override

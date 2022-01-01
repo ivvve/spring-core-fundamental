@@ -1,10 +1,10 @@
 package com.example.order.service;
 
+import com.example.annotation.MainDiscountPolicy;
 import com.example.discount.domain.DiscountPolicy;
 import com.example.member.domain.Member;
 import com.example.member.repository.MemberRepository;
 import com.example.order.domain.Order;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.math.BigInteger;
@@ -14,8 +14,10 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
-    public OrderServiceImpl(final MemberRepository memberRepository, final DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(
+            final MemberRepository memberRepository,
+            @MainDiscountPolicy final DiscountPolicy discountPolicy
+    ) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
