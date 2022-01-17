@@ -9,11 +9,9 @@ public abstract class AbstractTemplate<T> {
     private final LogTrace trace;
 
     public T execute(final String message) {
-        TraceStatus status = null;
+        final TraceStatus status = this.trace.begin(message);
 
         try {
-            status = this.trace.begin(message);
-
             final T result = this.call();
 
             this.trace.end(status);

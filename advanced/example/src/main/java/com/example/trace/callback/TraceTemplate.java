@@ -9,11 +9,9 @@ public class TraceTemplate {
     private final LogTrace trace;
 
     public <T> T execute(final String message, final TraceCallback<T> callback) {
-        TraceStatus status = null;
+        final TraceStatus status = this.trace.begin(message);
 
         try {
-            status = this.trace.begin(message);
-
             final T result = callback.call();
 
             this.trace.end(status);

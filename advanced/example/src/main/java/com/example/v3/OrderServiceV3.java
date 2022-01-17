@@ -14,7 +14,7 @@ public class OrderServiceV3 {
     private final LogTrace trace;
 
     public void orderItem(final TraceId priorTraceId, final String itemId) {
-        final TraceStatus status = this.trace.begin("OrderServiceV2.orderItem");
+        final TraceStatus status = this.trace.begin("OrderServiceV3.orderItem");
 
         try {
             this.orderRepository.save(itemId);

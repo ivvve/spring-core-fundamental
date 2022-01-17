@@ -11,7 +11,7 @@ public class OrderRepositoryV3 {
     private final LogTrace trace;
 
     public void save(final String itemId) {
-        final TraceStatus status = this.trace.begin("OrderRepositoryV2.save");
+        final TraceStatus status = this.trace.begin("OrderRepositoryV3.save");
 
         try {
             if ("ex".equals(itemId)) {
