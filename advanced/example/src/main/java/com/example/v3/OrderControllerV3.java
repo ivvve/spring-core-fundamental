@@ -2,7 +2,6 @@ package com.example.v3;
 
 import com.example.trace.LogTrace;
 import com.example.trace.TraceStatus;
-import com.example.trace.hello.HelloTraceV2;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +18,7 @@ public class OrderControllerV3 {
         final TraceStatus status = this.trace.begin("OrderControllerV3.request");
 
         try {
-            this.orderService.orderItem(status.getTraceId(), itemId);
+            this.orderService.orderItem(itemId);
             this.trace.end(status);
 
             return "ok";

@@ -13,7 +13,7 @@ public class OrderServiceV3 {
     private final OrderRepositoryV3 orderRepository;
     private final LogTrace trace;
 
-    public void orderItem(final TraceId priorTraceId, final String itemId) {
+    public void orderItem(final String itemId) {
         final TraceStatus status = this.trace.begin("OrderServiceV3.orderItem");
 
         try {
