@@ -8,7 +8,7 @@ import proxy.app.v1.proxy.OrderControllerV1Proxy;
 import proxy.app.v1.proxy.OrderRepositoryV1Proxy;
 import proxy.app.v1.proxy.OrderServiceV1Proxy;
 
-@Configuration
+//@Configuration
 public class AppV1Config {
     @Bean
     public OrderControllerV1 orderControllerV1(final LogTrace logTrace) {

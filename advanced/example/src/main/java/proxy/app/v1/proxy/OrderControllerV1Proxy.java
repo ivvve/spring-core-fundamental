@@ -12,7 +12,7 @@ public class OrderControllerV1Proxy implements OrderControllerV1 {
 
     @Override
     public String request(final String itemId) {
-        final TraceStatus status = logTrace.begin("OrderControllerV1Proxy.orderItem()");
+        final TraceStatus status = logTrace.begin("OrderControllerV1.orderItem()");
 
         try {
             final String result = this.orderController.request(itemId);
