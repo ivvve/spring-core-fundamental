@@ -37,7 +37,7 @@ public class LogTraceFilterHandler implements InvocationHandler {
     }
 
     private boolean shouldSkipLog(final String methodName) {
-        return !PatternMatchUtils.simpleMatch(this.patterns, methodName));
+        return !PatternMatchUtils.simpleMatch(this.patterns, methodName);
     }
 
     private String getMessage(final Method method) {
