@@ -7,7 +7,7 @@ import proxy.app.v1.*;
 
 import java.lang.reflect.Proxy;
 
-@Configuration
+//@Configuration
 public class AppV1DynamicProxyFilterConfig {
     private static final String[] PATTERNS = {
             "request*", // controller
