@@ -56,7 +56,7 @@ public class BeanPostProcessorTest {
     static class AToBPostProcessor implements BeanPostProcessor {
         @Override
         public Object postProcessAfterInitialization(final Object bean, final String beanName) throws BeansException {
-            log.info("beanName={}, bea={}", beanName, bean);
+            log.info("beanName={}, bean={}", beanName, bean);
 
             if (bean instanceof A) {
                 return new B();

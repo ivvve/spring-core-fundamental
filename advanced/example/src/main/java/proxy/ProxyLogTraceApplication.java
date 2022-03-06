@@ -6,11 +6,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
+import proxy.config.AopConfig;
 import proxy.config.AppV1ProxyFactoryConfig;
 import proxy.config.AppV2ProxyFactoryConfig;
-import proxy.config.BeanPostProcessorConfig;
 
-@Import({AppV1ProxyFactoryConfig.class, AppV2ProxyFactoryConfig.class, BeanPostProcessorConfig.class})
+@Import({AppV1ProxyFactoryConfig.class, AppV2ProxyFactoryConfig.class, AopConfig.class})
 @SpringBootApplication
 public class ProxyLogTraceApplication {
 

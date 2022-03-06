@@ -6,12 +6,11 @@ import org.springframework.aop.Advisor;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.NameMatchMethodPointcut;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import proxy.config.advice.LogTraceAdvice;
 import proxy.config.postprocessor.PackageLogTraceProxyPostProcessor;
 
 @Slf4j
-@Configuration
+//@Configuration
 public class BeanPostProcessorConfig {
     @Bean
     public PackageLogTraceProxyPostProcessor logTraceProxyPostProcessor(final LogTrace logTrace) {
